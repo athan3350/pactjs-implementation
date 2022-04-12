@@ -88,7 +88,7 @@ We use [Node](https://nodejs.org/en/), Node.js® is a runtime environment for Ja
 
 Dummy API:
 
->curl --location --request GET 'https://gorest.co.in/public/v2/posts/102/comments' \
+>curl --location --request GET 'https://gorest.co.in/public/v2/posts/100/comments' \
 --header 'Authorization: Bearer c71a5d82d1d52eb305b9302363ff68502737cca35426d880cc9a5c934f0c1730'
 
 ## **used technology stack**
