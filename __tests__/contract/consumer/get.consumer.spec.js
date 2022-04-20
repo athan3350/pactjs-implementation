@@ -9,7 +9,6 @@ const path = require("path")
 const provider = new PactV3({
     log: path.resolve(process.cwd(), "__tests__/contract/logs", "mockserver-integration.log"),
     dir: path.resolve(process.cwd(), "__tests__/contract/pacts"),
-    spec: 2,
     logLevel: 'TRACE',
     pactfileWriteMode: "overwrite",
     consumer: 'getidentityConsumer',
