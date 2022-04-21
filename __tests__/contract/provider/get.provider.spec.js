@@ -26,7 +26,7 @@ describe("Validate pact of identity", () => {
                     setup: (params) => {
                         console.log("Entering to the state");
                         console.log(params);
-                        return Promise.resolve({ id: 102 });
+                        return Promise.resolve({ id: 100 });
                     }
                 }
             },

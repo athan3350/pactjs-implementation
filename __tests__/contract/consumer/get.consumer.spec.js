@@ -2,7 +2,7 @@
 
 const { getRequest } = require("../helpers/sendRequest")
 const { PactV3, MatchersV3 } = require('@pact-foundation/pact/v3');
-const { fromProviderState } = MatchersV3;
+const { fromProviderState, like, eachLike } = MatchersV3;
 const path = require("path")
 
 
@@ -34,15 +34,15 @@ describe("Validate pact of identity", () => {
                 })
                 .willRespondWith({
                     status: 200,
-                    body: [
+                    body: eachLike(
                         {
-                            "id": 107,
-                            "post_id": 100,
-                            "name": "Rakesh Nair",
-                            "email": "nair_rakesh@schoen.io",
-                            "body": "Sed vel ad. Ea similique tempora. In a iusto."
+                            "id": like(107),
+                            "post_id": like(100),
+                            "name": like("Rakesh Nair"),
+                            "email": like("nair_rakesh@schoen.io"),
+                            "body": like("Sed vel ad. Ea similique tempora. In a iusto.")
                         }
-                    ]
+                    )
                 });
 
             return provider.executeTest(async (mockserver) => {
